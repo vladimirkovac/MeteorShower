@@ -21,7 +21,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="84dp"
+            android:layout_height="76dp"
             app:srcCompat="@drawable/meteor_circle2"
             android:id="@+id/imageView4"
             android:layout_marginTop="10dp" />
@@ -33,7 +33,7 @@
         android:id="@+id/btn_startgame"
         android:layout_marginLeft="160dp"
         android:layout_marginRight="160dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorPrimary" />
 

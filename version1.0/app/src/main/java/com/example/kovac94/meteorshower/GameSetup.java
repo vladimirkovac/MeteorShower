@@ -1,6 +1,7 @@
 package com.example.kovac94.meteorshower;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -27,5 +29,16 @@ public class GameSetup extends AppCompatActivity {
 
         setContentView(R.layout.activity_game_setup);
 
+        //Exit button
+        Button btn_start = (Button) findViewById(R.id.btn_start);
+        btn_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainGame.class);
+                startActivityForResult(intent,0);
+            }
+        });
+
     }
+
 }

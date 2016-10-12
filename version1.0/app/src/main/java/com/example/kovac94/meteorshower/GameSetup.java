@@ -10,13 +10,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class GameSetup extends AppCompatActivity {
+public class GameSetup extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    Spinner spinner;
+    String[] difficulty = {"Easy", "Medium", "Hard", "Insane", "18+"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,9 @@ public class GameSetup extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_game_setup);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, difficulty);
+        spinner.setAdapter(adapter);
 
         //Exit button
         Button btn_start = (Button) findViewById(R.id.btn_start);
@@ -41,4 +49,8 @@ public class GameSetup extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 }
